@@ -12,8 +12,7 @@ const findall=async(req,res)=>{
     }
 }
 
-const findByIdProvincia=async(req,res=response)=>{
-   
+const findByIdProvincia=async(req,res=response)=>{   
     try {
         const response=await DistritoDTO.findAll({
             where: {
@@ -25,6 +24,9 @@ const findByIdProvincia=async(req,res=response)=>{
         res.status(500).send({ success: false, message: error.message });
     }
 }
+
+
+
 
 module.exports={
     findall,

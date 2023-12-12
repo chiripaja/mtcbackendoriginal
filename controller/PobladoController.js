@@ -34,8 +34,25 @@ const findbyid=async(req,res)=>{
     }
 }
 
+
+const findByUbigeoName=async(req,res=response)=>{
+    try {
+        const response=await PobladoDTO.findAll({   
+            attributes: ['centro_poblado'],        
+            where: {
+                ubigeo:req.params.id
+            }
+          })
+          console.log(response)
+          res.json(response)
+    } catch (error) {
+        res.status(500).send({ success: false, message: error.message });
+    }
+}
+
 module.exports={
     findByUbigeo,
     findall,
-    findbyid
+    findbyid,
+    findByUbigeoName
 }
