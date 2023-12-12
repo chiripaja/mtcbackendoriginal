@@ -41,7 +41,8 @@ const findByUbigeoName=async(req,res=response)=>{
             attributes: ['centro_poblado'],        
             where: {
                 ubigeo:req.params.id
-            }
+            },
+            order: [['centro_poblado', 'ASC']]
           })
           console.log(response)
           res.json(response)
