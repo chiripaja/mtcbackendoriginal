@@ -20,6 +20,9 @@ const RespuestasDTO=sequelize.define('respuesta',{
     ressproveedor:{
         type:DataTypes.STRING,
     },
+    respproveedorotro:{
+        type:DataTypes.STRING,
+    },
     resvelocidad:{
         type:DataTypes.STRING,
     },
@@ -27,6 +30,9 @@ const RespuestasDTO=sequelize.define('respuesta',{
         type:DataTypes.STRING,
     },
     resproblem:{
+        type:DataTypes.STRING,
+    },
+    resproblemotro:{
         type:DataTypes.STRING,
     },
     resresponsable:{
