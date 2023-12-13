@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config();
 
 const findall = async (req, res = response) => {
-    console.log("id del usuario:"+req.id)
+    
     try {
         const response = await UserDTO.findAll()
         res.status(200).json(response)

@@ -38,7 +38,7 @@ const findbyid=async(req,res)=>{
 const findByUbigeoName=async(req,res=response)=>{
     try {
         const response=await PobladoDTO.findAll({   
-            attributes: ['centro_poblado'],        
+            attributes: ['id','centro_poblado'],        
             where: {
                 ubigeo:req.params.id
             },

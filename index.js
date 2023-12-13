@@ -30,6 +30,8 @@ app.use('/api/distrito',require('./router/distrito'))
 app.use('/api/provincia',require('./router/provincia'))
 app.use('/api/respuesta/',require('./router/respuesta'))
 app.use('/api/colegio/',require('./router/colegio'))
+app.use('/api/proyecto/',require('./router/proyecto'))
+app.use('/api/proyectoDetalle/',require('./router/proyectoDetalle'))
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${process.env.PORT}`) 
 })
