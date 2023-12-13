@@ -8,6 +8,9 @@ const UserDTO=sequelize.define('Usuario',{
     },
     password:{
         type:DataTypes.STRING
+    },
+    nombre:{
+        type:DataTypes.STRING
     }
 })
 
