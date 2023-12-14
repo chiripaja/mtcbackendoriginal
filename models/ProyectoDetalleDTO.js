@@ -6,7 +6,7 @@ const ProyectoDetalleDTO = sequelize.define('proyectodetalle', {
         type: DataTypes.STRING,
     },
     idproyecto: {
-        type: DataTypes.DATE
+        type: DataTypes.STRING
     }
 }, {
     tableName: 'proyectodetalle'

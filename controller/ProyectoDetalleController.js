@@ -11,6 +11,7 @@ const create=async(req,res=response)=>{
             idccpp,
             idproyecto
         } = req.body;
+        console.log(req.body)
         const response = await ProyectoDetalleDTO.create({ 
             idccpp: idccpp,
             idproyecto:idproyecto
@@ -42,11 +43,27 @@ const findall = async (req, res = response) => {
     }
 }
 
+const findData=async(req,res=response)=>{
+    try{
+        
+        const response= await sequelize.query("select pd.id, p.nomproyec,cp.centro_poblado from proyecto p INNER join proyectodetalle pd on p.id=pd.idproyecto inner join centros_poblados_detalles cp on cp.id=pd.idccpp where p.id=:projectId", 
+        { 
+            replacements: { projectId: req.params.id },
+            type: QueryTypes.SELECT 
+        });
+        res.status(200).json(response)
+    }
+    catch (error) {
+        res.status(500).send({ success: false, message: error.message });
+    }
+}
+
 
 
 
 module.exports={
     create,
     findall,
-    Delete
+    Delete,
+    findData
 }
