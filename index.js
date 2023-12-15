@@ -3,10 +3,10 @@ require('dotenv').config();
 const cors=require('cors');
 const { sequelize } = require('./sequilize/sequilize')
 const app = express()
+const path = require('path');
 
 
 
-//defecto
 app.use(express.static('public'))
 app.use(cors())
 //lectura y parseo de body
@@ -35,3 +35,8 @@ app.use('/api/proyectoDetalle/',require('./router/proyectoDetalle'))
 app.listen(process.env.PORT, () => {
   console.log(`Example app listening on port ${process.env.PORT}`) 
 })
+
+
+app.use((req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
