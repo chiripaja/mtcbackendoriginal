@@ -1,4 +1,4 @@
-const { Sequelize, DataTypes } = require('sequelize');
+const { DataTypes } = require('sequelize');
 const { sequelize } = require('../sequilize/sequilize');
 
 const PobladoDTO=sequelize.define('poblado',{
@@ -196,6 +196,9 @@ const PobladoDTO=sequelize.define('poblado',{
     },
     url:{
         type:DataTypes.STRING,
+    },
+    acceso_internet:{
+        type: DataTypes.STRING
     }
 }, {
     tableName: 'centros_poblados_detalles',

@@ -50,11 +50,21 @@ const findall = async (req, res = response) => {
     }
 }
 
+const finById=async(req,res)=>{
+    try {  
+      const response=await ProyectoDTO.findByPk(req.params.id);
+      res.json(response)
+    } catch (error) {
+      res.status(500).send({ success: false, message: error.message });
+    } 
+  }
+
 
 
 
 module.exports={
     create,
     findall,
-    Delete
+    Delete,
+    finById
 }
