@@ -2,7 +2,7 @@ const { Sequelize, DataTypes } = require('sequelize');
 const { sequelize } = require('../sequilize/sequilize');
 
 
-const UserDTO=sequelize.define('Usuario',{
+const UserDTO=sequelize.define('usuario',{
     usuario:{
         type:DataTypes.STRING,
     },
@@ -12,6 +12,8 @@ const UserDTO=sequelize.define('Usuario',{
     nombre:{
         type:DataTypes.STRING
     }
+}, {
+    tableName: 'usuarios'
 })
 
 module.exports=UserDTO
